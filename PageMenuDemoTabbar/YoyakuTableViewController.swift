@@ -5,7 +5,7 @@
 //  Created by Yohei Fusayasu on 7/11/15.
 //  Copyright (c) 2015 Niklas Fahl. All rights reserved.
 // 1'''参加予定
-
+import Parse
 import UIKit
 
 class YoyakuTableViewController: UITableViewController {
@@ -13,7 +13,7 @@ class YoyakuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerNib(UINib(nibName: "YoyakuTableViewCell", bundle: nil),forCellReuseIdentifier: "Yoyaku")
+        self.tableView.registerNib(UINib(nibName: "YoyakuTableViewCell", bundle: nil),forCellReuseIdentifier: "YoyakuTableViewCell")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,7 +32,7 @@ class YoyakuTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,11 +43,18 @@ class YoyakuTableViewController: UITableViewController {
 
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Yoyaku", forIndexPath: indexPath) as! YoyakuTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("YoyakuTableViewCell", forIndexPath: indexPath) as! YoyakuTableViewCell
 
         // Configure the cell...
 
         return cell
+    }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 130.0
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.001
     }
    
 

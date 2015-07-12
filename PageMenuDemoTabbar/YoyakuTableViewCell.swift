@@ -10,6 +10,19 @@ import UIKit
 
 class YoyakuTableViewCell: UITableViewCell {
 
+    //right
+    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var titlelabel: UILabel!
+    
+    @IBOutlet weak var totalNum: UILabel!
+    @IBOutlet weak var joinNum: UILabel!
+    //left 
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
